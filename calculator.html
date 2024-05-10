@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <title>Calculator</title>
+</head>
+
+<body style="text-align: center;background-color:rgb(105, 234, 40)">
+    <h1>Calculator</h1>
+    <input type="text" id="txt1" placeholder="first number" required>
+    <input type="text" id="txt2" placeholder="second number" required><br>
+    <br><input type="text" id="txt3" disabled placeholder="result"><br><br>
+    <input type="button" onclick="fun1('+')" value="+">
+    <input type="button" onclick="fun1('-')" value="-" >
+    <input type="button" onclick="fun1('')" value="" >
+    <input type="button" onclick="fun1('%')" value="%" >
+    <input type="button" onclick="fun1('/')" value="/" ><br><br>
+    <input type="reset" value="AC" onclick="txt1.value=null;txt2.value=null;txt3.value=null;" style="background-color:rgb(47, 181, 225);text-transform: bold;">
+    <script>
+        function fun1(value) {
+            var n1 = parseInt(txt1.value);
+            var n2 = parseInt(txt2.value);
+            var res;
+            switch (value) {
+                case "+":
+                    res = n1 + n2;
+                    break;
+                case "-":
+                    res = n1 - n2;
+                    break;
+                case "*":
+                    res = n1 * n2;
+                    break;
+                case "/":
+                    if (n2 == 0) {
+                        alert("Error: Division by zero");
+                    }
+                    res = n1 / n2;
+                    break;
+                case "%":
+                    res = n1 % n2;
+                    break;
+                default:
+                    alert("Invalid operator");
+            }
+            txt3.value = res;
+        }
+    </script>
+</body>
+
+</html>
