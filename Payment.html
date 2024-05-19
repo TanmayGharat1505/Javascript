@@ -1,0 +1,113 @@
+<!-- <html>
+    <head>
+        <title>Payment</title>
+    </head>
+    <body>
+        <script>
+            function upi(mfrom, mto, amount, fun1, fun2)
+            {
+                if(mfrom==null || mto==null || amount==null)
+                {
+                    fun1("Error")
+                }
+                else
+                {
+                    fun1("Success")
+                }
+            }
+            function bhimupi(m1, m2, amt)
+            {
+                upi(m1, m2, amt, function(a)
+                {
+                    if (a.tolower()=="Success")
+                    document.write("<p style= 'color:green '> Payment done </p>")
+                    
+                    else
+                    if (a.tolower()=="Error")
+                    document.write("<p style='color: red'> Error </p>");
+
+                    else
+                    document.write("Unknown")
+                });
+            }
+        </script>
+        <input type="button" onclick="bhimupi(null,null,9000)" value="BHIM NULL">
+        <br><hr>
+        <input type="button" onclick="bhimupi(4567898765, 7537598636, 20000)" value="BHIM 20000">
+        <br><hr>
+    </body>
+</html> -->
+
+
+<html>
+    <head>
+        <title>Payments</title>
+    </head>
+    <body>
+        <script>
+            function upi(mfrom, mto, amount, fun1)
+            {
+                if(mfrom==null||mto==null||amount==null)
+                {
+                    fun1("ERROR")
+                }
+                else{
+                    fun1("SUCCESS")
+                }
+            }
+            function bhimupi(m1, m2, amt)
+            {
+                upi(m1, m2, amt, function(a)
+                    {
+                        if(a.toLowerCase()=="success")
+                            document.write("<p style='color:green'>Payment Done</p>")
+                        else
+                            if(a.toLowerCase()=="error")
+                                document.write("<p style='color:red'>ERROR</p>")
+                            else
+                                document.write("UNKNOWN")
+                    });
+            }
+            function gpay(m1, m2, amt)
+            {
+                upi(m1, m2, amt, function(a)
+                    {
+                        if(a.toLowerCase()=="success")
+                            document.write("<img src='https://zeuxinnovation.com/wp-content/uploads/2023/04/maximising-user-satisfaction-1.jpg' style='background-size:cover;'>")
+                        else
+                            if(a.toLowerCase()=="error")
+                                document.write("<img src='https://cdn.dribbble.com/users/399488/screenshots/3077134/payment_declined_1x.jpg?resize=400x0' style='background-size:cover;'>")
+                            else
+                                document.write("UNKNOWN")
+                    });
+            
+                }
+                function phonepay(m1, m2, amt)
+                        {
+                            upi(m1, m2, amt, function(a)   
+                                {
+                                    if(a.toLowerCase()=="success")
+                                        document.write("<p style='color:green'>₹1000 paid</p>")
+                                    else
+                                        if(a.toLowerCase()=="error")
+                                            document.write("<p style='color:red'>₹1000 not paid</p>")
+                                        else
+                                            document.write("UNKNOWN")
+                                });
+                        }
+        </script>
+        <input type="button" onclick="bhimupi(null, null, 9000)" value="BHIM NULL">
+        <br><hr>
+        <input type="button" onclick="bhimupi(1234567890, 9876543201, 20000)" value="BHIM 20000">
+        <br><hr>
+        <input type="button" onclick="gpay(null, null, 9000)" value="GPAY NULL">
+        <br><hr>
+        <input type="button" onclick="gpay(1234567890, 9876543201, 20000)" value="GPAY 20000">
+        <br><hr>
+        <input type="button" onclick="phonepay(null, null, 10000)" value="phonepay 10000">
+        <br><hr>
+
+        <input type="button" onclick="phonepay(1234567890, 9876543201, 10000)" value="phonepay 10000">
+        <br><hr>
+    </body>
+</html>
