@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <body>
+            <script type="text/javascript">
+                function textsizer(e)
+                {
+                    alert("hi");
+                    var evtobj= window.event? event:e
+                    var unicode=evtobj.charCode? evtobj.charcode: evtobj.KeyCode
+                    var actualKey=String.fromCharCode(unicode)
+                    if(aactualKey=="a")
+                    document.body.fontsize="5em"
+                    if (actualKey =="z")
+                    document.body.styl.fontsize="2em"
+                }
+                document.onkeypress=textsizer
+
+            </script>
+            Institute of Technology and Management
+        </body>
+    </head>
+</html>
